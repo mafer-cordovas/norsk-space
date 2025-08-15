@@ -16,37 +16,38 @@
         <div class="question-list">
             <div class="question">
                 <span class="prompt">
-                    <input type="text" id="q1" class="input-field"> er Maria.
+                    <input type="text" id="q1" class="input-field"> <span class="sentence-part">er Maria.</span>
                 </span>
                 <span class="hint">(I am Maria.)</span>
             </div>
             <div class="question">
                 <span class="prompt">
-                    <input type="text" id="q2" class="input-field"> er fra Canada.
+                    <input type="text" id="q2" class="input-field"> <span class="sentence-part">er fra Canada.</span>
                 </span>
                 <span class="hint">(You are from Canada.)</span>
             </div>
             <div class="question">
                 <span class="prompt">
-                    Han <input type="text" id="q3" class="input-field"> lege.
+                    Han <input type="text" id="q3" class="input-field"> <span class="sentence-part">lege.</span>
                 </span>
                 <span class="hint">(He is a doctor.)</span>
             </div>
             <div class="question">
                 <span class="prompt">
-                    <input type="text" id="q4" class="input-field"> er amerikanere.
+                    <input type="text" id="q4" class="input-field"> <span class="sentence-part">er amerikanere.</span>
                 </span>
                 <span class="hint">(They are Americans.)</span>
             </div>
             <div class="question">
                 <span class="prompt">
-                    Vi <input type="text" id="q5" class="input-field"> her.
+                    Vi <input type="text" id="q5" class="input-field"> <span class="sentence-part">her.</span>
                 </span>
                 <span class="hint">(We are here.)</span>
             </div>
         </div>
 
-        <button onclick="checkAnswers()">Check Answers</button>
+        <button onclick="checkAnswers()" class="check-button">Check Answers</button>
+        <button onclick="restartExercise()" class="restart-button">Restart</button>
         <div id="feedback-message" class="feedback-message"></div>
 
     </div>
