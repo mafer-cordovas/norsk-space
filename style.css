@@ -1,6 +1,6 @@
 /* General body styling */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #4a4a4a; /* Softer dark text color */
     margin: 0;
     padding: 10px; /* Reduced overall padding */
@@ -233,26 +233,39 @@ button {
         font-size: 0.9em;
     }
     .question {
-        flex-direction: column; /* This will stack the prompt and hint */
-        align-items: flex-start; /* Align everything to the left */
+        /* On small screens, the question will stack its direct children (prompt and hint) */
+        flex-direction: column;
+        align-items: flex-start; /* Align everything to the left for better readability */
         gap: 5px; /* Smaller gap between stacked items */
     }
     .prompt {
         width: 100%; /* Make the prompt take full width */
         font-size: 1em;
         justify-content: flex-start; /* Ensure prompt contents are left-aligned */
+        /* Make the input field itself display as an inline-block */
+        display: inline-flex; /* Use inline-flex to keep input and text on same line within the prompt */
+        flex-wrap: wrap; /* Allow parts of the prompt to wrap if needed */
+        align-items: baseline; /* Align text and input nicely */
     }
     .input-field {
-        width: 80px; /* Give the input field a reasonable width */
-        font-size: 0.95em;
+        width: 60px; /* **Further reduced width for very small screens** */
+        flex-shrink: 0; /* Prevent the input from shrinking */
+        font-size: 0.9em; /* Slightly smaller font in input for tight fit */
+        padding: 6px 8px; /* Slightly reduced padding */
+    }
+    .sentence-part {
+        display: inline-block; /* Ensure text after input flows nicely */
+        flex-grow: 1; /* Allow the sentence part to take available space */
+        min-width: 0; /* Allow it to shrink if necessary */
     }
     .hint {
         margin-left: 0; /* Remove any previous left margin */
         width: 100%; /* Make hint take full width below the prompt */
         text-align: center; /* Center the hint text for a cleaner look */
         padding: 4px 6px; /* Slightly less padding */
-        font-size: 0.8em; /* Make hint text a bit smaller to fit better */
+        font-size: 0.75em; /* Make hint text even smaller to fit better */
         order: 2; /* Ensure hint always appears after prompt in the column layout */
+        box-sizing: border-box; /* Include padding and border in the width */
     }
     button {
         font-size: 1em;
