@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norwegian Exercise 1.1: Pronunciation</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for speaker icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="exercise-container">
+        <h2>Exercise 1.1: Pronunciation Practice</h2>
+        <p class="instructions">Click on each word to hear its Norwegian pronunciation. Practice repeating them!</p>
 
+        <div class="word-list-container">
+            <div class="pronunciation-word" onclick="playPhrase('snakke', 'Kore')">
+                <span class="word">snakke</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('hei', 'Kore')">
+                <span class="word">hei</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('ha det', 'Kore')">
+                <span class="word">ha det</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('øy', 'Kore')">
+                <span class="word">øy</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('ærlig', 'Kore')">
+                <span class="word">ærlig</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('kanskje', 'Kore')">
+                <span class="word">kanskje</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('kjøkken', 'Kore')">
+                <span class="word">kjøkken</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('genser', 'Kore')">
+                <span class="word">genser</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('jeg', 'Kore')">
+                <span class="word">jeg</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('deg', 'Kore')">
+                <span class="word">deg</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+            <div class="pronunciation-word" onclick="playPhrase('bygge', 'Kore')">
+                <span class="word">bygge</span> <i class="fas fa-volume-up speaker-icon"></i>
+            </div>
+        </div>
+
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="spinner"></div> Loading audio...
+        </div>
+        <div id="error-message" class="error-message"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
