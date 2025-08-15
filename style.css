@@ -1,6 +1,6 @@
 /* General body styling */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #4a4a4a; /* Softer dark text color */
     margin: 0;
     padding: 10px; /* Reduced overall padding */
@@ -217,7 +217,7 @@ button {
     background-color: #f2f2f2; /* Light background for message */
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for phone screens */
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -233,21 +233,26 @@ button {
         font-size: 0.9em;
     }
     .question {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-    .hint {
-        margin-left: 0;
-        width: auto;
-    }
-    .input-field {
-        width: 80px; /* Adjusted width for small screens */
-        font-size: 0.95em;
+        flex-direction: column; /* This will stack the prompt and hint */
+        align-items: flex-start; /* Align everything to the left */
+        gap: 5px; /* Smaller gap between stacked items */
     }
     .prompt {
-        width: 100%;
+        width: 100%; /* Make the prompt take full width */
         font-size: 1em;
+        justify-content: flex-start; /* Ensure prompt contents are left-aligned */
+    }
+    .input-field {
+        width: 80px; /* Give the input field a reasonable width */
+        font-size: 0.95em;
+    }
+    .hint {
+        margin-left: 0; /* Remove any previous left margin */
+        width: 100%; /* Make hint take full width below the prompt */
+        text-align: center; /* Center the hint text for a cleaner look */
+        padding: 4px 6px; /* Slightly less padding */
+        font-size: 0.8em; /* Make hint text a bit smaller to fit better */
+        order: 2; /* Ensure hint always appears after prompt in the column layout */
     }
     button {
         font-size: 1em;
