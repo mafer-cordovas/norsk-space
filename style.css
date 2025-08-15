@@ -3,7 +3,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #4a4a4a; /* Softer dark text color */
     margin: 0;
-    padding: 20px;
+    padding: 10px; /* Reduced overall padding */
     box-sizing: border-box;
     line-height: 1.6;
     /* Soft gradient background for the whole page */
@@ -19,24 +19,24 @@ body {
 .exercise-container {
     background-color: #ffffff; /* White background for the card */
     border: none; /* Remove default border */
-    border-radius: 18px; /* Even more rounded corners for a friendly look */
-    padding: 30px; /* More padding inside */
-    max-width: 600px; /* Slightly wider */
-    width: 90%; /* Ensure responsiveness */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
+    border-radius: 16px; /* Slightly less rounded for a tighter fit */
+    padding: 20px; /* Reduced padding inside */
+    max-width: 450px; /* Significantly reduced width */
+    width: 95%; /* Ensure responsiveness */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
     transition: all 0.3s ease-in-out;
     position: relative; /* For potential future decorative elements */
     overflow: hidden; /* Hide anything outside the rounded corners */
 }
 
-/* Optional subtle pattern or decoration */
+/* Optional subtle pattern or decoration (scaled down) */
 .exercise-container::before {
     content: '';
     position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 150px;
-    height: 150px;
+    top: -40px;
+    left: -40px;
+    width: 100px;
+    height: 100px;
     background: radial-gradient(circle, rgba(255,193,7,0.1), transparent 70%);
     border-radius: 50%;
     z-index: 0;
@@ -44,10 +44,10 @@ body {
 .exercise-container::after {
     content: '';
     position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 150px;
-    height: 150px;
+    bottom: -40px;
+    right: -40px;
+    width: 100px;
+    height: 100px;
     background: radial-gradient(circle, rgba(0,123,255,0.1), transparent 70%);
     border-radius: 50%;
     z-index: 0;
@@ -56,16 +56,16 @@ body {
 
 /* Hover effect for the container */
 .exercise-container:hover {
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-    transform: translateY(-5px); /* More pronounced lift effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px); /* Slightly less pronounced lift effect */
 }
 
 h2 {
     color: #ff8c00; /* Vibrant orange for the heading */
     margin-top: 0;
     text-align: center;
-    font-size: 2.2em; /* Larger heading */
-    margin-bottom: 15px;
+    font-size: 1.8em; /* Reduced heading size */
+    margin-bottom: 12px;
     font-weight: 800; /* Bolder font */
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
@@ -75,32 +75,32 @@ h2 {
     font-style: normal; /* Remove italic for a cleaner look */
     color: #6a6a6a; /* Slightly darker than default grey */
     text-align: center;
-    margin-bottom: 35px;
-    font-size: 1.05em;
+    margin-bottom: 25px; /* Reduced margin */
+    font-size: 0.95em; /* Slightly smaller instruction font */
     line-height: 1.5;
 }
 
 /* Styling for individual questions */
 .question-list {
-    margin-bottom: 30px;
+    margin-bottom: 20px; /* Reduced margin */
 }
 
 .question {
-    margin-bottom: 22px; /* More space between questions */
+    margin-bottom: 18px; /* Reduced space between questions */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 12px; /* More space between prompt/input and hint */
+    gap: 10px; /* Slightly reduced gap */
 }
 
 .prompt {
-    font-size: 1.2em; /* Slightly larger prompt text */
+    font-size: 1.1em; /* Reduced prompt text size */
     color: #333333; /* Darker text for readability */
     flex-grow: 1;
     display: flex;
     align-items: center;
-    gap: 10px; /* More space between text and input */
+    gap: 8px; /* Slightly reduced gap */
     font-weight: 500;
 }
 
@@ -109,33 +109,33 @@ h2 {
 }
 
 .hint {
-    font-size: 0.9em;
+    font-size: 0.85em; /* Slightly smaller hint font */
     color: #888888;
     flex-shrink: 0;
     background-color: #f0f4f7; /* Lighter background for hint */
-    padding: 6px 10px;
-    border-radius: 8px; /* More rounded hint box */
+    padding: 5px 8px; /* Reduced padding */
+    border-radius: 6px; /* Slightly less rounded hint box */
     border: 1px solid #dcdfe4;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.02); /* Less noticeable inner shadow */
 }
 
 /* Input field styling */
 .input-field {
-    width: 90px; /* Slightly wider */
-    padding: 10px 12px;
+    width: 70px; /* Reduced width */
+    padding: 8px 10px; /* Reduced padding */
     border: 2px solid #aaddff; /* Softer blue border */
-    border-radius: 10px; /* More rounded */
-    font-size: 1.1em;
+    border-radius: 8px; /* Reduced roundedness */
+    font-size: 1em; /* Reduced font size */
     transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
     outline: none;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.08); /* More noticeable inner shadow */
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.08); /* Less noticeable inner shadow */
     font-weight: 600;
     color: #333;
 }
 
 .input-field:focus {
     border-color: #007bff; /* Standard blue on focus */
-    box-shadow: 0 0 0 5px rgba(0, 123, 255, 0.25); /* Stronger focus glow */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2); /* Slightly less strong focus glow */
     background-color: #f7faff; /* Very light blue background on focus */
 }
 
@@ -143,54 +143,77 @@ h2 {
 .input-field.correct {
     border-color: #28a745 !important; /* Green for correct */
     background-color: #e6ffed; /* Light green background */
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.15); /* Softer glow */
+    box-shadow: 0 0 0 2px rgba(40, 167, 69, 0.15); /* Softer glow */
 }
 
 .input-field.incorrect {
     border-color: #dc3545 !important; /* Red for incorrect */
     background-color: #ffe6e6; /* Light red background */
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.15); /* Softer glow */
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.15); /* Softer glow */
 }
 
-/* Button styling */
+/* Button styling - common styles for both buttons */
 button {
     display: block;
     width: 100%;
-    padding: 16px 25px; /* More padding for a bolder button */
-    margin-top: 40px;
-    background: linear-gradient(145deg, #1abc9c, #16a085); /* Fresh teal gradient */
-    color: white;
+    padding: 12px 20px; /* Reduced padding for a smaller button */
+    margin-top: 20px; /* Adjusted margin */
     border: none;
-    border-radius: 10px; /* More rounded */
-    font-size: 1.3em; /* Larger font */
+    border-radius: 8px; /* Reduced roundedness */
+    font-size: 1.1em; /* Reduced font size */
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 8px 20px rgba(26, 188, 156, 0.4); /* Vibrant shadow */
-    letter-spacing: 1px; /* More spacing for button text */
+    letter-spacing: 0.8px; /* Slightly less spacing */
     text-transform: uppercase; /* Uppercase for emphasis */
 }
 
-button:hover {
-    background: linear-gradient(145deg, #16a085, #138d75); /* Darker teal on hover */
-    transform: translateY(-4px); /* More noticeable lift effect */
-    box-shadow: 0 12px 25px rgba(26, 188, 156, 0.5);
+/* Specific styling for the "Check Answers" button */
+.check-button {
+    background: linear-gradient(145deg, #1abc9c, #16a085); /* Fresh teal gradient */
+    color: white;
+    box-shadow: 0 6px 15px rgba(26, 188, 156, 0.4); /* Less vibrant shadow */
 }
 
-button:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.check-button:hover {
+    background: linear-gradient(145deg, #16a085, #138d75); /* Darker teal on hover */
+    transform: translateY(-2px); /* Less noticeable lift effect */
+    box-shadow: 0 8px 18px rgba(26, 188, 156, 0.5);
 }
+
+.check-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific styling for the "Restart" button */
+.restart-button {
+    background: linear-gradient(145deg, #6c757d, #5a6268); /* Grey/blue-grey gradient */
+    color: white;
+    box-shadow: 0 6px 15px rgba(108, 117, 125, 0.3); /* Softer shadow */
+}
+
+.restart-button:hover {
+    background: linear-gradient(145deg, #5a6268, #495057); /* Darker grey on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(108, 117, 125, 0.4);
+}
+
+.restart-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Feedback message area */
 #feedback-message {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 25px; /* Reduced margin */
     font-weight: bold;
-    font-size: 1.3em; /* Larger feedback font */
-    min-height: 2em; /* Ensure enough space */
-    padding: 8px;
-    border-radius: 8px;
+    font-size: 1.1em; /* Reduced feedback font size */
+    min-height: 1.8em; /* Ensure enough space */
+    padding: 6px;
+    border-radius: 6px;
     background-color: #f2f2f2; /* Light background for message */
 }
 
@@ -200,37 +223,38 @@ button:active {
         padding: 10px;
     }
     .exercise-container {
-        padding: 20px;
-        border-radius: 12px;
+        padding: 15px; /* Reduced padding for very small screens */
+        border-radius: 10px;
     }
     h2 {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
     .instructions {
-        font-size: 0.95em;
+        font-size: 0.9em;
     }
     .question {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
     }
     .hint {
         margin-left: 0;
         width: auto;
     }
     .input-field {
-        width: 100px; /* Give more space to input field */
-        font-size: 1em;
+        width: 80px; /* Adjusted width for small screens */
+        font-size: 0.95em;
     }
     .prompt {
         width: 100%;
-        font-size: 1.1em;
+        font-size: 1em;
     }
     button {
-        font-size: 1.1em;
-        padding: 12px 15px;
+        font-size: 1em;
+        padding: 10px 12px;
+        margin-top: 15px; /* Adjust spacing between buttons on small screens */
     }
     #feedback-message {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 }
