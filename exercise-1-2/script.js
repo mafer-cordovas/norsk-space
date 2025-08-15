@@ -94,7 +94,7 @@ async function playPhrase(text, voiceName) {
             model: "gemini-2.5-flash-preview-tts"
         };
 
-        const apiKey = ""; // Canvas will provide this API key automatically at runtime.
+        const apiKey = "AIzaSyBchivn4oOSIMzAUT1RSCbjlyh7937-gdA"; // Canvas will provide this API key automatically at runtime.
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
 
         let response;
