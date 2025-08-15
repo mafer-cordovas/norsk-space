@@ -3,37 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Norwegian Grammar Exercise</title>
+    <title>Norwegian Exercise 1.3</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="exercise-container">
         <h2>Exercise 1.3: Fill in the Blanks</h2>
-        <p>Use the correct pronoun or verb form to complete the sentences.</p>
-        
-        <form id="quiz-form">
+        <p class="instructions">Use the correct pronoun or verb form to complete the sentences. Answers should be in all lowercase.</p>
+
+        <div class="question-list">
             <div class="question">
-                <p><input type="text" id="q1" class="blank" placeholder="____"> er Maria. (I am Maria.)</p>
+                <span class="prompt">
+                    <input type="text" id="q1" class="input-field"> er Maria.
+                </span>
+                <span class="hint">(I am Maria.)</span>
             </div>
             <div class="question">
-                <p><input type="text" id="q2" class="blank" placeholder="____"> er fra Canada. (You are from Canada.)</p>
+                <span class="prompt">
+                    <input type="text" id="q2" class="input-field"> er fra Canada.
+                </span>
+                <span class="hint">(You are from Canada.)</span>
             </div>
             <div class="question">
-                <p>Han <input type="text" id="q3" class="blank" placeholder="____"> lege. (He is a doctor.)</p>
+                <span class="prompt">
+                    Han <input type="text" id="q3" class="input-field"> lege.
+                </span>
+                <span class="hint">(He is a doctor.)</span>
             </div>
             <div class="question">
-                <p><input type="text" id="q4" class="blank" placeholder="____"> er amerikanere. (They are Americans.)</p>
+                <span class="prompt">
+                    <input type="text" id="q4" class="input-field"> er amerikanere.
+                </span>
+                <span class="hint">(They are Americans.)</span>
             </div>
             <div class="question">
-                <p>Vi <input type="text" id="q5" class="blank" placeholder="____"> her. (We are here.)</p>
+                <span class="prompt">
+                    Vi <input type="text" id="q5" class="input-field"> her.
+                </span>
+                <span class="hint">(We are here.)</span>
             </div>
-            
-            <button type="submit" id="check-btn">Check My Answers</button>
-        </form>
-        
-        <div id="feedback" class="feedback"></div>
+        </div>
+
+        <button onclick="checkAnswers()">Check Answers</button>
+        <div id="feedback-message" class="feedback-message"></div>
+
     </div>
-    
+
     <script src="script.js"></script>
 </body>
 </html>
