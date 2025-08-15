@@ -1,37 +1,44 @@
-document.getElementById('quiz-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevents the form from submitting normally
-    
+/**
+ * Checks the user's answers against predefined correct answers.
+ * Updates input field styles and displays a feedback message.
+ */
+function checkAnswers() {
+    // Define the correct answers for each question ID
     const answers = {
-        q1: 'jeg',
-        q2: 'du',
-        q3: 'er',
-        q4: 'de',
-        q5: 'er'
+        q1: "jeg", // I
+        q2: "du",  // You (singular informal)
+        q3: "er",  // is/are
+        q4: "de",  // They
+        q5: "er"   // is/are
     };
-    
-    let allCorrect = true;
-    const feedbackDiv = document.getElementById('feedback');
-    feedbackDiv.innerHTML = '';
-    
-    for (const key in answers) {
-        const input = document.getElementById(key);
+
+    let correctCount = 0; // Counter for correct answers
+    const feedbackMessage = document.getElementById('feedback-message'); // Get feedback display element
+
+    // Loop through each question to check the answer
+    for (const id in answers) {
+        const input = document.getElementById(id); // Get the input field by its ID
+        // Get user's answer, trim whitespace, and convert to lowercase for case-insensitive comparison
         const userAnswer = input.value.trim().toLowerCase();
-        
-        if (userAnswer === answers[key]) {
-            input.style.borderColor = 'green';
-            input.style.color = 'green';
+
+        // Remove previous feedback classes
+        input.classList.remove('correct', 'incorrect');
+
+        // Check if the user's answer matches the correct answer
+        if (userAnswer === answers[id]) {
+            input.classList.add('correct'); // Add correct styling
+            correctCount++; // Increment correct count
         } else {
-            input.style.borderColor = 'red';
-            input.style.color = 'red';
-            allCorrect = false;
+            input.classList.add('incorrect'); // Add incorrect styling
         }
     }
-    
-    if (allCorrect) {
-        feedbackDiv.textContent = 'Great job! You got all the answers correct. 🎉';
-        feedbackDiv.className = 'feedback correct';
+
+    // Display overall feedback message
+    if (correctCount === Object.keys(answers).length) {
+        feedbackMessage.textContent = `🎉 Bravo! You got all ${correctCount} answers correct!`;
+        feedbackMessage.style.color = '#28a745'; // Green color for success
     } else {
-        feedbackDiv.textContent = 'Some answers are incorrect. Please try again.';
-        feedbackDiv.className = 'feedback incorrect';
+        feedbackMessage.textContent = `You got ${correctCount} out of ${Object.keys(answers).length} answers correct. Keep practicing!`;
+        feedbackMessage.style.color = '#dc3545'; // Red color for incorrect
     }
-});
+}
