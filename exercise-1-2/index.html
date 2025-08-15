@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norwegian Exercise 1.2: Dialogue</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Google Fonts for 'Inter' -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for speaker icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="exercise-container">
+        <h2>Exercise 1.2: Dialogue Practice</h2>
+        <p class="instructions">Click on each line to hear the Norwegian phrase. Practice repeating them!</p>
+
+        <div class="dialogue-container">
+            <div class="dialogue-line person-a" onclick="playPhrase('Hei!', 'Kore')">
+                <span class="speaker">Person A:</span> <span class="phrase">Hei!</span> <i class="fas fa-volume-up speaker-icon"></i>
+                <span class="translation">(Hi!)</span>
+            </div>
+            <div class="dialogue-line person-b" onclick="playPhrase('Hallo!', 'Puck')">
+                <span class="speaker">Person B:</span> <span class="phrase">Hallo!</span> <i class="fas fa-volume-up speaker-icon"></i>
+                <span class="translation">(Hello!)</span>
+            </div>
+            <div class="dialogue-line person-a" onclick="playPhrase('Ha det bra!', 'Kore')">
+                <span class="speaker">Person A:</span> <span class="phrase">Ha det bra!</span> <i class="fas fa-volume-up speaker-icon"></i>
+                <span class="translation">(Goodbye! / Have it good!)</span>
+            </div>
+            <div class="dialogue-line person-b" onclick="playPhrase('Vi snakkes!', 'Puck')">
+                <span class="speaker">Person B:</span> <span class="phrase">Vi snakkes!</span> <i class="fas fa-volume-up speaker-icon"></i>
+                <span class="translation">(We\'ll talk! / See you!)</span>
+            </div>
+        </div>
+
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="spinner"></div> Loading audio...
+        </div>
+        <div id="error-message" class="error-message"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
