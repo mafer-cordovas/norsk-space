@@ -1,0 +1,204 @@
+/* General body styling */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #4a4a4a; /* Softer dark text color */
+    margin: 0;
+    padding: 10px; /* Reduced overall padding */
+    box-sizing: border-box;
+    line-height: 1.6;
+    /* Soft gradient background for the whole page */
+    background: linear-gradient(135deg, #fceabb, #f8b500); /* Warm, cheerful gradient */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Container for the entire exercise */
+.exercise-container {
+    background-color: #ffffff; /* White background for the card */
+    border: none; /* Remove default border */
+    border-radius: 16px; /* Slightly less rounded for a tighter fit */
+    padding: 20px; /* Reduced padding inside */
+    max-width: 450px; /* Significantly reduced width */
+    width: 95%; /* Ensure responsiveness */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Softer, larger shadow */
+    transition: all 0.3s ease-in-out;
+    position: relative; /* For potential future decorative elements */
+    overflow: hidden; /* Hide anything outside the rounded corners */
+}
+
+/* Optional subtle pattern or decoration (scaled down) */
+.exercise-container::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,193,7,0.1), transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+.exercise-container::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(0,123,255,0.1), transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+
+/* Hover effect for the container */
+.exercise-container:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px); /* Slightly less pronounced lift effect */
+}
+
+h2 {
+    color: #ff8c00; /* Vibrant orange for the heading */
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.8em; /* Reduced heading size */
+    margin-bottom: 12px;
+    font-weight: 800; /* Bolder font */
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+.instructions {
+    font-style: normal; /* Remove italic for a cleaner look */
+    color: #6a6a6a; /* Slightly darker than default grey */
+    text-align: center;
+    margin-bottom: 25px; /* Reduced margin */
+    font-size: 0.95em; /* Slightly smaller instruction font */
+    line-height: 1.5;
+}
+
+/* Dialogue specific styling */
+.dialogue-container {
+    margin-top: 20px;
+}
+
+.dialogue-line {
+    background-color: #f7faff; /* Light blue background for lines */
+    border: 1px solid #cceeff; /* Soft blue border */
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute speaker, phrase, and icon */
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dialogue-line:hover {
+    background-color: #e0f2ff; /* Lighter blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialogue-line .speaker {
+    font-weight: 700;
+    color: #007bff; /* Blue for speaker names */
+    margin-right: 8px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.dialogue-line .phrase {
+    font-size: 1.1em;
+    flex-grow: 1; /* Allow phrase to take up space */
+    color: #333;
+}
+
+.dialogue-line .translation {
+    font-size: 0.85em;
+    color: #888;
+    margin-left: 10px;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.speaker-icon {
+    color: #1abc9c; /* Teal color for speaker icon */
+    margin-left: 10px;
+    font-size: 1.1em;
+    flex-shrink: 0;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    display: none; /* Hidden by default */
+    text-align: center;
+    margin-top: 20px;
+    color: #6a6a6a;
+    font-size: 0.9em;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #1abc9c; /* Teal spinner */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    display: none; /* Hidden by default */
+    text-align: center;
+    margin-top: 20px;
+    color: #dc3545; /* Red for error messages */
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .exercise-container {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .instructions {
+        font-size: 0.9em;
+    }
+    .dialogue-line {
+        flex-wrap: wrap; /* Allow wrapping */
+        padding: 10px 12px;
+        align-items: flex-start; /* Align stacked items to start */
+    }
+    .dialogue-line .speaker {
+        width: 100%; /* Speaker name takes full width */
+        margin-bottom: 5px; /* Space below speaker name */
+    }
+    .dialogue-line .phrase {
+        font-size: 1em;
+        flex-grow: 1;
+    }
+    .dialogue-line .translation {
+        width: 100%; /* Translation takes full width */
+        margin-left: 0; /* Remove left margin */
+        text-align: left; /* Align left */
+        font-size: 0.8em;
+        color: #a0a0a0; /* Slightly lighter for translation */
+    }
+    .speaker-icon {
+        margin-left: 5px; /* Adjust icon margin */
+        order: 1; /* Keep icon close to phrase */
+    }
+}
