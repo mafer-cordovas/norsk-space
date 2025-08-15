@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norwegian Grammar Exercise</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- React and ReactDOM CDN -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX transformation in browser (for development only) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        // Paste the React App component code here
+        // Make sure to remove 'export default App;' as it's not needed for simple browser use
+        // For example, just paste the 'const App = () => { ... };' part.
+
+        const App = () => {
+            const [answers, setAnswers] = React.useState({
+                q1: '', q2: '', q3: '', q4: '', q5: ''
+            });
+
+            const [feedback, setFeedback] = React.useState({ message: '', type: '' });
+
+            const correctAnswers = {
+                q1: 'jeg', q2: 'du', q3: 'er', q4: 'de', q5: 'er'
+            };
+
+            const handleChange = (e) => {
+                setAnswers({
+                    ...answers,
+                    [e.target.id]: e.target.value
+                });
+            };
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+
+                let allCorrect = true;
+                const inputElements = document.querySelectorAll('.blank-input');
+
+                inputElements.forEach(input => {
+                    const questionId = input.id;
+                    const userAnswer = answers[questionId].trim().toLowerCase();
+                    const correctAnswer = correctAnswers[questionId];
+
+                    if (userAnswer === correctAnswer) {
+                        input.classList.remove('border-red-500', 'text-red-700');
+                        input.classList.add('border-green-500', 'text-green-700');
+                    } else {
+                        input.classList.remove('border-green-500', 'text-green-700');
+                        input.classList.add('border-red-500', 'text-red-700');
+                        allCorrect = false;
+                    }
+                });
+
+                if (allCorrect) {
+                    setFeedback({
+                        message: 'Awesome! You got all the answers correct. 🎉',
+                        type: 'correct'
+                    });
+                } else {
+                    setFeedback({
+                        message: 'Hmm, some answers are incorrect. Take another look! 🤔',
+                        type: 'incorrect'
+                    });
+                }
+            };
+
+            return (
+                <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+                    <div className="bg-white p-8 md:p-10 rounded-xl shadow-2xl w-full max-w-lg border border-gray-200">
+                        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-4 tracking-tight">
+                            Exercise 1.3: Fill in the Blanks
+                        </h1>
+                        <p className="text-center text-gray-600 mb-8 text-lg">
+                            Use the correct pronoun or verb form to complete the sentences.
+                        </p>
+
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="flex items-center text-lg md:text-xl text-gray-700">
+                                <input
+                                    type="text"
+                                    id="q1"
+                                    value={answers.q1}
+                                    onChange={handleChange}
+                                    className="blank-input w-28 md:w-32 px-4 py-2 border-2 rounded-lg text-center font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out"
+                                    placeholder="____"
+                                    aria-label="Blank for 'I am Maria'"
+                                />
+                                <span className="ml-3">er Maria. (I am Maria.)</span>
+                            </div>
+
+                            <div className="flex items-center text-lg md:text-xl text-gray-700">
+                                <input
+                                    type="text"
+                                    id="q2"
+                                    value={answers.q2}
+                                    onChange={handleChange}
+                                    className="blank-input w-28 md:w-32 px-4 py-2 border-2 rounded-lg text-center font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out"
+                                    placeholder="____"
+                                    aria-label="Blank for 'You are from Canada'"
+                                />
+                                <span className="ml-3">er fra Canada. (You are from Canada.)</span>
+                            </div>
+
+                            <div className="flex items-center text-lg md:text-xl text-gray-700">
+                                <span className="mr-3">Han</span>
+                                <input
+                                    type="text"
+                                    id="q3"
+                                    value={answers.q3}
+                                    onChange={handleChange}
+                                    className="blank-input w-28 md:w-32 px-4 py-2 border-2 rounded-lg text-center font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out"
+                                    placeholder="____"
+                                    aria-label="Blank for 'He is a doctor'"
+                                />
+                                <span className="ml-3">lege. (He is a doctor.)</span>
+                            </div>
+
+                            <div className="flex items-center text-lg md:text-xl text-gray-700">
+                                <input
+                                    type="text"
+                                    id="q4"
+                                    value={answers.q4}
+                                    onChange={handleChange}
+                                    className="blank-input w-28 md:w-32 px-4 py-2 border-2 rounded-lg text-center font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out"
+                                    placeholder="____"
+                                    aria-label="Blank for 'They are Americans'"
+                                />
+                                <span className="ml-3">er amerikanere. (They are Americans.)</span>
+                            </div>
+
+                            <div className="flex items-center text-lg md:text-xl text-gray-700">
+                                <span className="mr-3">Vi</span>
+                                <input
+                                    type="text"
+                                    id="q5"
+                                    value={answers.q5}
+                                    onChange={handleChange}
+                                    className="blank-input w-28 md:w-32 px-4 py-2 border-2 rounded-lg text-center font-semibold focus:outline-none focus:ring-2 focus:ring-blue-400 transition duration-200 ease-in-out"
+                                    placeholder="____"
+                                    aria-label="Blank for 'We are here'"
+                                />
+                                <span className="ml-3">her. (We are here.)</span>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transform transition duration-200 ease-in-out hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                            >
+                                Check My Answers
+                            </button>
+                        </form>
+
+                        {feedback.message && (
+                            <div
+                                className={`mt-8 p-4 rounded-lg text-center text-lg font-semibold ${
+                                    feedback.type === 'correct' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                                }`}
+                            >
+                                {feedback.message}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
